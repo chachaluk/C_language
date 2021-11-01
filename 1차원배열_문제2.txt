@@ -1,0 +1,28 @@
+// 문자 뒤집어서 저장해서 출력하는 문제
+#pragma warning(disable:4996)
+#include <stdio.h>
+
+int main(void)
+{
+	char str[50];
+	int idx = 0;
+
+	printf("문자열 입력: ");
+	scanf("%s", str);
+	printf("입력 받은 문자열: %s \n", str);
+	printf("뒤집은 문자열 출력 : ");
+	while (str[idx] != '\0')
+	{
+		idx++;
+	}
+
+	int temp = 0;
+	
+	for (int i = 0; i < idx / 2; i++)
+	{
+		temp = str[i];
+		str[i] = str[(idx - i) - 1];
+		str[(idx - i) - 1] = temp;
+	}
+	printf("%s", str);
+}
