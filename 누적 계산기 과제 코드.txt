@@ -1,0 +1,80 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+
+double Add(double A, double B);
+double Min(double A, double B);
+double Mul(double A, double B);
+double Div(double A, double B);
+
+int main(void)
+{
+
+	char opt;
+	double num1=0, num2=0;
+	double result=0;
+	double All_result = 0;
+
+	printf("계산기\n");
+	printf("+ - * /\n");
+	printf("0 입력시 계산종료\n");
+
+
+
+	while (1)
+	{
+		
+		scanf("%lf", &num1);
+		scanf("\n%c", &opt);
+		scanf("%lf", &num2);
+
+		switch (opt)
+		{
+		case '+':
+			result=Add(num1, num2);
+			break;
+		case '-':
+			result = Min(num1, num2);
+			break;
+		case '*':
+			result = Mul(num1, num2);
+			break;
+		case '/':
+			result = Div(num1, num2);
+			break;
+		default:
+			printf("잘 못 입력하셨습니다.\n");
+
+		}
+
+		if (num2 == 0||==num1)
+			break;
+
+		printf("결과: %.1f\n", result);
+		All_result += result;
+		printf("누적 결과값:%.1f\n", All_result);
+	}
+		
+
+		return 0;
+	
+}
+
+double Add(double A, double B)
+{
+	return A + B;
+}
+
+double Min(double A, double B)
+{
+	return A - B;
+}
+
+double Mul(double A, double B)
+{
+	return A * B;
+}
+
+double Div(double A, double B)
+{
+	return A / B;
+}
