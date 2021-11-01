@@ -1,0 +1,42 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+
+int main(void)
+{
+	int ID = 500;
+	int PW = 1234;
+	int id, pw;
+
+	while (1)
+	{
+		printf("ID입력: \n");
+		scanf("%d", &id);
+		printf("PW입력: \n");
+		scanf("%d", &pw);
+
+
+		if (ID != id && PW != pw)
+		{
+			printf("ID와 PW를 확인하세요.\n");
+			
+		}
+		else if (ID != id)
+		{
+			printf("ID를 확인하세요.\n");
+			
+		}
+		else if (PW != pw)
+		{
+			printf("PW를 확인하세요.\n");
+			
+		}
+	
+
+		else 
+		{
+			printf("로그인성공");
+			break;
+		}
+	}
+	return 0;
+}
